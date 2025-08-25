@@ -1,16 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import SignUp from './components/signUp'
+import Login from './components/Login'
 
-function App() {
-  const [count, setCount] = useState(0)
+import ProfileView from './components/ProfileView'
+import ProfileUpdate from './components/ProfileUpdate'
+import Feedback from './components/Feedback.jsx'
 
+
+const App = () => {
   return (
     <>
-      <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+      {/* <ProfileView username="deepak" />
+      <ProfileUpdate existingProfile={{ username: "deepak" }} /> */}
+      {/* <Feedback username="deepak"/> */}
+        
     </>
   )
 }
