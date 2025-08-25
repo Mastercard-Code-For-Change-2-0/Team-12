@@ -1,11 +1,12 @@
 import express from 'express';
-import {updateProfile , profile} from '../controller/profile.controller.js';
+import {updateProfile , profile ,deleteProfile} from '../controller/profile.controller.js';
 import authMiddleware from '../middleware/auth.js';
 
 const router = express.Router();
 // Define profile-related routes here
 
-router.post('/update', authMiddleware, updateProfile);
-router.get('/fetch', authMiddleware, profile);
+router.post('/update',  updateProfile);
+router.get('/fetch',  profile);
+router.delete('/delete', deleteProfile);
 
 export default router;

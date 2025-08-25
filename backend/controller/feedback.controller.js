@@ -44,4 +44,19 @@ export const getFeedback = async (req, res) => {
     console.error("Error retrieving feedback:", error);
     res.status(500).json({ message: "Server error", error });
   }
+
+
+};
+
+export const getAllFeedbacks = async (req, res) => {
+  try {
+    const feedbacks = await Feedback.find(); // fetch all documents
+    if (!feedbacks || feedbacks.length === 0) {
+      return res.status(404).json({ success: false, message: "No feedbacks found" });
+    }
+    res.status(200).json({ success: true, feedbacks });
+  } catch (error) {
+    console.error("Error fetching all feedbacks:", error);
+    res.status(500).json({ success: false, message: "Server error", error });
+  }
 };
